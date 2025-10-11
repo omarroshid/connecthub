@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                  String   @id
+  email               String   @unique
+  displayName         String
+  role                String
+  bio                 String?
+  introVideoUrl       String?
+  profilePhotoUrl     String?
+  socialLinks         Json?
+  onboardingComplete  Boolean  @default(false)
+  createdAt           DateTime @default(now())
+  categories          String[] @default([])
+  verified            Boolean  @default(false)
+  responseTimeHours   Int?
+  pricingTiers        Json?
+  bookingsAsFan       Booking[] @relation("FanBookings")
+  bookingsAsCreator   Booking[] @relation("CreatorBookings")
+}
+
+model Booking {
+  id          String   @id @default(uuid())
+  fanId       String
+  creatorId   String
+  type        String // e.g. video, call, text
+  message     String
+  price       Float
+  status      String // pending, paid, accepted, delivered, cancelled
+  videoUrl    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  // Relations
+  fan         User     @relation("FanBookings", fields: [fanId], references: [id])
+  creator     User     @relation("CreatorBookings", fields: [creatorId], references: [id])
+
+  @@index([fanId])
+  @@index([creatorId])
+}

@@ -1,0 +1,24 @@
+{
+  "name": "somali-cameo-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/mobile",
+    "apps/api",
+    "packages/ui",
+    "packages/types"
+  ],
+  "scripts": {
+    "dev:web": "cd apps/web && npm run dev",
+    "dev:mobile": "cd apps/mobile && npm run start",
+    "dev:api": "cd apps/api && npm run dev",
+    "install:all": "npm install --workspaces",
+    "lint": "echo 'Set up workspace linting!'"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "turbo": "^1.13.2"
+  }
+}
