@@ -1,5 +1,5 @@
 {
-  "totalDuration": 119.919,
+  "totalDuration": 120.22,
   "lines": [
     {
       "section": "title",
@@ -7,239 +7,239 @@
       "label": null,
       "text": "Salesvue Review. Pros and Cons. Watch before using.",
       "start": 0.0,
-      "end": 4.084
+      "end": 4.07
     },
     {
       "section": "intro",
       "bullet": null,
       "label": null,
       "text": "Thinking about Salesvue for your sales team?",
-      "start": 4.234,
-      "end": 7.037
+      "start": 4.22,
+      "end": 7.04
     },
     {
       "section": "intro",
       "bullet": null,
       "label": null,
       "text": "Here's what you need to know before you buy.",
-      "start": 7.187,
-      "end": 9.563
+      "start": 7.19,
+      "end": 9.554
     },
     {
       "section": "intro",
       "bullet": null,
       "label": null,
       "text": "Salesvue is a sales engagement and dialer platform built natively inside Salesforce.",
-      "start": 9.713,
-      "end": 14.933
+      "start": 9.704,
+      "end": 14.924
     },
     {
       "section": "intro",
       "bullet": null,
       "label": null,
       "text": "That means no separate app, no data syncing, and no extra logins.",
-      "start": 15.083,
-      "end": 19.605
+      "start": 15.074,
+      "end": 19.615
     },
     {
       "section": "pros-title",
       "bullet": null,
       "label": null,
       "text": "Let's start with the pros.",
-      "start": 20.205,
-      "end": 22.006
+      "start": 20.215,
+      "end": 22.017
     },
     {
       "section": "pros",
       "bullet": 1,
       "label": "100% native to Salesforce",
       "text": "Pro number one: it lives one hundred percent inside Salesforce.",
-      "start": 22.406,
-      "end": 26.707
+      "start": 22.417,
+      "end": 26.768
     },
     {
       "section": "pros",
       "bullet": 1,
       "label": null,
       "text": "Your cadences, calls, and reports are all standard Salesforce data.",
-      "start": 26.857,
-      "end": 31.26
+      "start": 26.918,
+      "end": 31.323
     },
     {
       "section": "pros",
       "bullet": 2,
       "label": "Multi-channel cadences",
       "text": "Pro number two: built in multi-channel cadences.",
-      "start": 31.56,
-      "end": 34.808
+      "start": 31.623,
+      "end": 34.882
     },
     {
       "section": "pros",
       "bullet": 2,
       "label": null,
       "text": "Automate calls, emails, and tasks in one guided sequence.",
-      "start": 34.958,
-      "end": 39.008
+      "start": 35.032,
+      "end": 39.113
     },
     {
       "section": "pros",
       "bullet": 3,
       "label": "Native reporting & dashboards",
       "text": "Pro number three: native reporting and dashboards.",
-      "start": 39.308,
-      "end": 42.63
+      "start": 39.413,
+      "end": 42.742
     },
     {
       "section": "pros",
       "bullet": 3,
       "label": null,
       "text": "Because the data is native, you can build any report Salesforce allows.",
-      "start": 42.78,
-      "end": 46.942
+      "start": 42.892,
+      "end": 47.04
     },
     {
       "section": "pros",
       "bullet": 4,
       "label": "Deep admin customization",
       "text": "Pro number four: deep admin customization.",
-      "start": 47.242,
-      "end": 50.284
+      "start": 47.34,
+      "end": 50.396
     },
     {
       "section": "pros",
       "bullet": 4,
       "label": null,
       "text": "Your Salesforce admin can extend it with flows and tools they already know.",
-      "start": 50.434,
-      "end": 54.808
+      "start": 50.546,
+      "end": 54.928
     },
     {
       "section": "cons-title",
       "bullet": null,
       "label": null,
       "text": "Now, the cons.",
-      "start": 55.408,
-      "end": 56.905
+      "start": 55.528,
+      "end": 57.035
     },
     {
       "section": "cons",
       "bullet": 1,
       "label": "Salesforce-only",
       "text": "Con number one: it only works with Salesforce.",
-      "start": 57.305,
-      "end": 60.519
+      "start": 57.435,
+      "end": 60.682
     },
     {
       "section": "cons",
       "bullet": 1,
       "label": null,
       "text": "If your team isn't on Salesforce, Salesvue isn't an option.",
-      "start": 60.669,
-      "end": 64.357
+      "start": 60.832,
+      "end": 64.519
     },
     {
       "section": "cons",
       "bullet": 2,
       "label": "Pricing isn't public",
       "text": "Con number two: pricing isn't public.",
-      "start": 64.657,
-      "end": 67.475
+      "start": 64.819,
+      "end": 67.637
     },
     {
       "section": "cons",
       "bullet": 2,
       "label": null,
       "text": "You'll need to talk to sales for a quote, which can slow down evaluation.",
-      "start": 67.625,
-      "end": 71.913
+      "start": 67.787,
+      "end": 72.112
     },
     {
       "section": "cons",
       "bullet": 3,
       "label": "Interface feels utilitarian",
       "text": "Con number three: the interface can feel less modern.",
-      "start": 72.213,
-      "end": 75.652
+      "start": 72.412,
+      "end": 75.858
     },
     {
       "section": "cons",
       "bullet": 3,
       "label": null,
       "text": "Compared to standalone tools like Outreach or Salesloft, the UI leans utilitarian.",
-      "start": 75.802,
-      "end": 81.023
+      "start": 76.008,
+      "end": 81.263
     },
     {
       "section": "cons",
       "bullet": 4,
       "label": "Real setup & admin time",
       "text": "Con number four: setup takes real admin time.",
-      "start": 81.323,
-      "end": 84.81
+      "start": 81.563,
+      "end": 85.034
     },
     {
       "section": "cons",
       "bullet": 4,
       "label": null,
       "text": "Getting cadences and dialing configured well isn't a five minute job.",
-      "start": 84.96,
-      "end": 89.077
+      "start": 85.184,
+      "end": 89.312
     },
     {
       "section": "verdict",
       "bullet": null,
       "label": null,
       "text": "So, who is Salesvue actually for?",
-      "start": 89.677,
-      "end": 92.166
+      "start": 89.912,
+      "end": 92.416
     },
     {
       "section": "verdict",
       "bullet": null,
       "label": null,
       "text": "If your whole sales org already lives in Salesforce and you want native reporting without a second system, it's a strong fit.",
-      "start": 92.316,
-      "end": 99.353
+      "start": 92.566,
+      "end": 99.599
     },
     {
       "section": "verdict",
       "bullet": null,
       "label": null,
       "text": "If you're not on Salesforce, or you want a flashier out of the box tool, look elsewhere.",
-      "start": 99.503,
-      "end": 104.506
+      "start": 99.749,
+      "end": 104.765
     },
     {
       "section": "outro",
       "bullet": null,
       "label": null,
       "text": "That's the Salesvue review.",
-      "start": 105.106,
-      "end": 106.863
+      "start": 105.365,
+      "end": 107.125
     },
     {
       "section": "outro",
       "bullet": null,
       "label": null,
       "text": "Pros: fully native, strong reporting, deep customization.",
-      "start": 107.013,
-      "end": 111.27
+      "start": 107.275,
+      "end": 111.526
     },
     {
       "section": "outro",
       "bullet": null,
       "label": null,
       "text": "Cons: Salesforce only, opaque pricing, and a real setup curve.",
-      "start": 111.42,
-      "end": 116.089
+      "start": 111.676,
+      "end": 116.353
     },
     {
       "section": "outro",
       "bullet": null,
       "label": null,
       "text": "Do your own demo before you commit, and thanks for watching.",
-      "start": 116.239,
-      "end": 119.769
+      "start": 116.503,
+      "end": 120.07
     }
   ]
 }

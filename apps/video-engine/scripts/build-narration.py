@@ -14,13 +14,18 @@ ROOT = Path(__file__).resolve().parent.parent
 AUDIO_DIR = ROOT / "public" / "audio"
 LINES_DIR = AUDIO_DIR / "lines"
 TIMELINE_OUT = ROOT / "src" / "SalesvueReview" / "timeline.json"
+VOICE = "en-us+grandpa"
 SPEED_WPM = 172
+PITCH = 25  # 0-99, default 50; lower = deeper
 SAMPLE_RATE = 22050
 
 
 def synth_line(text: str, out_path: Path) -> None:
     subprocess.run(
-        ["espeak-ng", "-v", "en-us", "-s", str(SPEED_WPM), "-a", "170", "-w", str(out_path), text],
+        [
+            "espeak-ng", "-v", VOICE, "-s", str(SPEED_WPM), "-p", str(PITCH),
+            "-a", "170", "-w", str(out_path), text,
+        ],
         check=True,
         capture_output=True,
     )
