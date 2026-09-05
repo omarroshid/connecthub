@@ -28,13 +28,15 @@ export const KeywordPop: React.FC<{ timeline: TimelineHelpers; theme: Theme }> =
   const t = frame / fps;
 
   const active = timeline.lines.find((l) => l.keyword && t >= l.start && t < l.end);
-  if (!active || !active.keyword) return null;
+  const popDuration = active ? Math.min(1.1, active.end - active.start) : 0;
+  const exitStart = active ? active.start + Math.max(0, popDuration - 0.3) : 0;
 
-  const popDuration = Math.min(1.1, active.end - active.start);
-  const exitStart = active.start + Math.max(0, popDuration - 0.3);
-
-  const scale = useEmphasisPunch(active.start, 0.5, 1.06);
+  // Hooks run unconditionally (rules of hooks) with a safe fallback start
+  // time; the null-check happens after, when we decide whether to render.
+  const scale = useEmphasisPunch(active?.start ?? 0, 0.5, 1.06);
   const exit = useChoreographedExit(exitStart, 0.3);
+
+  if (!active || !active.keyword) return null;
   const opacity = t < exitStart ? 1 : exit.opacity;
   if (opacity <= 0.01) return null;
 
