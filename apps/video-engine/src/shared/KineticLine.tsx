@@ -1,6 +1,7 @@
-import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import type { TimelineHelpers } from "./timeline";
 import type { Theme } from "./theme";
+import { useFadeRise, useSpringIn, useChoreographedExit } from "./motion";
 
 // Swaps in the current line's full text, big and bold, re-animating every
 // time the active line changes. Since hook/CTA lines are short (2-3s each),
@@ -25,22 +26,18 @@ export const KineticLine: React.FC<{
     const windowEnd = i + 1 < section.lines.length ? section.lines[i + 1].start : section.end;
     return t >= l.start && t < windowEnd;
   });
-  if (index === -1) return null;
-  const active = section.lines[index];
+  const active = index === -1 ? undefined : section.lines[index];
   const isLast = index === section.lines.length - 1;
 
-  const localT = t - active.start;
-  const dur = active.end - active.start;
-  const scale = interpolate(localT, [0, 0.25], [0.85, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const translateY = interpolate(localT, [0, 0.25], [30, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const fadeIn = interpolate(localT, [0, 0.2], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const fadeOut = isLast
-    ? interpolate(localT, [Math.max(dur - 0.2, 0), dur], [1, 0], {
-        extrapolateLeft: "clamp",
-        extrapolateRight: "clamp",
-      })
-    : 1;
-  const opacity = Math.min(fadeIn, fadeOut);
+  // Hooks run unconditionally (rules of hooks) with a safe fallback start
+  // time; the null-check happens after, when we decide whether to render.
+  const { opacity: fadeInOpacity, ty } = useFadeRise(active?.start ?? 0, 0.3, 24);
+  const scale = useSpringIn(active?.start ?? 0, 0.3);
+  const dur = active ? active.end - active.start : 0;
+  const exit = useChoreographedExit(active ? active.start + Math.max(dur - 0.2, 0) : 0, 0.2);
+  const opacity = isLast ? Math.min(fadeInOpacity, exit.opacity) : fadeInOpacity;
+
+  if (!active) return null;
 
   return (
     <AbsoluteFill style={{ alignItems: "center", justifyContent: "center" }}>
@@ -50,7 +47,8 @@ export const KineticLine: React.FC<{
           padding: "0 80px",
           textAlign: "center",
           opacity,
-          transform: `translateY(${translateY}px) scale(${scale})`,
+          filter: isLast && exit.blur > 0.1 ? `blur(${exit.blur}px)` : undefined,
+          transform: `translateY(${ty + (isLast ? exit.ty : 0)}px) scale(${scale * (isLast ? exit.scale : 1)})`,
         }}
       >
         <div style={{ fontFamily: theme.font, fontSize, fontWeight: 800, color: theme.text, lineHeight: 1.25 }}>

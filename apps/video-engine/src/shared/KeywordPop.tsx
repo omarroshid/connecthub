@@ -1,6 +1,7 @@
-import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
+import { useCurrentFrame, useVideoConfig } from "remotion";
 import type { TimelineHelpers } from "./timeline";
 import type { Theme } from "./theme";
+import { useEmphasisPunch, useChoreographedExit } from "./motion";
 
 // A handful of off-center positions so consecutive pops don't stack in the
 // same spot - deterministic per occurrence (not random per frame).
@@ -29,18 +30,13 @@ export const KeywordPop: React.FC<{ timeline: TimelineHelpers; theme: Theme }> =
   const active = timeline.lines.find((l) => l.keyword && t >= l.start && t < l.end);
   if (!active || !active.keyword) return null;
 
-  const localT = t - active.start;
   const popDuration = Math.min(1.1, active.end - active.start);
+  const exitStart = active.start + Math.max(0, popDuration - 0.3);
 
-  const scale = interpolate(localT, [0, 0.12, popDuration - 0.25, popDuration], [0.6, 1.08, 1, 0.9], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  const opacity = interpolate(localT, [0, 0.1, popDuration - 0.2, popDuration], [0, 1, 1, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-  if (opacity <= 0) return null;
+  const scale = useEmphasisPunch(active.start, 0.5, 1.06);
+  const exit = useChoreographedExit(exitStart, 0.3);
+  const opacity = t < exitStart ? 1 : exit.opacity;
+  if (opacity <= 0.01) return null;
 
   const pos = POSITIONS[hashIndex(active.keyword, POSITIONS.length)];
 
@@ -50,7 +46,8 @@ export const KeywordPop: React.FC<{ timeline: TimelineHelpers; theme: Theme }> =
         position: "absolute",
         top: pos.top,
         left: pos.left,
-        transform: `translate(-50%, -50%) scale(${scale}) rotate(${pos.rotate}deg)`,
+        transform: `translate(-50%, -50%) scale(${scale * exit.scale}) rotate(${pos.rotate}deg) translateY(${exit.ty}px)`,
+        filter: exit.blur > 0.1 ? `blur(${exit.blur}px)` : undefined,
         opacity,
       }}
     >

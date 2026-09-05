@@ -25,6 +25,10 @@ export const Captions: React.FC<{ timeline: TimelineHelpers; theme: Theme; hideF
   if (index === -1) return null;
   const active = lines[index];
   if (hideForSections.includes(active.section)) return null;
+  // A keyword-pop is carrying this exact moment (big text, center-ish) -
+  // showing the same words again in the small bottom bar is a duplicate the
+  // viewer reads twice. Suppress the caption for that line's span instead.
+  if (active.keyword) return null;
   const isLast = index === lines.length - 1;
 
   const localT = t - active.start;

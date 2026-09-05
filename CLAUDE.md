@@ -15,6 +15,9 @@ the standing framework in [`docs/video-production/`](docs/video-production/):
   than inventing product details.
 - `VOICE_PROFILE.md` — the standard calibrated narration voice (eSpeak NG
   parameters matched to a user-provided reference voiceover sample).
+- `EDITING_STYLE.md` — motion/pacing rules adapted from a third-party
+  video-editing skill, plus the shared motion vocabulary in
+  `apps/video-engine/src/shared/motion.ts`.
 
 See `apps/video-engine/README.md` for how videos are built (Remotion +
 locally-synthesized narration, no network/API needed).
