@@ -1,0 +1,40 @@
+[
+  { "section": "hook", "keyword": "the hype", "text": "You've probably seen creators online swearing Podia is the only tool you'll ever need." },
+  { "section": "hook", "keyword": "or hype?", "text": "But is that actually true, or is it just another platform riding the all in one hype train?" },
+  { "section": "hook", "text": "I dug into what Podia actually does today, in 2026, before you hand over your credit card.", "gapAfter": 0.6 },
+
+  { "section": "intro", "keyword": "one login", "text": "Podia is an all in one platform for creators." },
+  { "section": "intro", "text": "Instead of paying for a course host, an email tool, and a website builder separately, Podia folds all of it into a single dashboard." },
+  { "section": "intro", "text": "One login, one bill, courses, coaching, memberships, and digital downloads.", "gapAfter": 0.6 },
+
+  { "section": "how-it-works", "text": "Here's what actually using it looks like." },
+  { "section": "how-it-works", "text": "You start by building your site with Podia's drag and drop editor, no code required, your own fonts, colors, and domain." },
+  { "section": "how-it-works", "text": "From there you upload your course, add videos, quizzes, and drip content so lessons unlock over time, and set up certificates for people who finish." },
+  { "section": "how-it-works", "keyword": "Zoom · Meet · YouTube", "text": "You can also run live webinars through Zoom, Google Meet, or YouTube Live, or host in person events with their own registration pages." },
+  { "section": "how-it-works", "text": "And built into all of that is email marketing, so you can send newsletters and automated sequences without ever leaving Podia.", "gapAfter": 0.6 },
+
+  { "section": "pros-title", "text": "Let's start with what Podia gets right.", "gapAfter": 0.4 },
+  { "section": "pros", "bullet": 1, "label": "Real consolidation", "keyword": "consolidation", "text": "The biggest win is real consolidation. If you're paying for a course host, an email tool, and a website builder separately, folding it into one platform can save real money and headaches." },
+  { "section": "pros", "bullet": 2, "label": "No student caps", "text": "There's no cap on students, no matter how big your course gets." },
+  { "section": "pros", "bullet": 3, "label": "Simple website builder", "text": "The website builder is refreshingly simple, drag and drop, no code." },
+  { "section": "pros", "bullet": 4, "label": "Free email marketing to 100", "text": "Email marketing is included free up to a hundred subscribers, even on the entry plan.", "gapAfter": 0.6 },
+
+  { "section": "cons-title", "text": "Now, the honest part.", "gapAfter": 0.4 },
+  { "section": "cons", "bullet": 1, "label": "No more free plan", "keyword": "no free plan", "text": "Podia used to have a free plan. That's gone, so you're committing to a paid plan once your trial ends." },
+  { "section": "cons", "bullet": 2, "label": "5% fee on entry plan", "keyword": "5% fee", "text": "The entry level Mover plan also charges a five percent transaction fee on every sale, which adds up fast at any real volume." },
+  { "section": "cons", "bullet": 3, "label": "Rigid course builder", "text": "Course building can feel rigid too. You can't put a video and a quiz in the same lesson, for example." },
+  { "section": "cons", "bullet": 4, "label": "Thin analytics & support", "text": "Multiple reviewers point out limited analytics, no easy way to see when a student finishes a course, and support that's slower with no weekend or phone coverage.", "gapAfter": 0.6 },
+
+  { "section": "who-for", "text": "So who's this actually for?" },
+  { "section": "who-for", "bullet": 1, "label": "Already juggling 3+ tools", "text": "If you're already paying for three or four separate tools to run your course business, Podia can genuinely simplify your stack and your bill." },
+  { "section": "who-for", "bullet": 2, "label": "Want it free, or lowest fees", "text": "But if you want a truly free way to start, or zero transaction fees on the cheapest plan, look at Thinkific instead." },
+  { "section": "who-for", "bullet": 3, "label": "Need heavy marketing automation", "text": "And if you need heavy marketing automation and sales funnels, Kajabi is built more specifically for that.", "gapAfter": 0.6 },
+
+  { "section": "verdict", "keyword": "worth it?", "text": "So, is Podia worth it?" },
+  { "section": "verdict", "text": "If you value simplicity over having every advanced feature under the sun, and you're ready to commit to a paid plan, it's a genuinely solid all in one option." },
+  { "section": "verdict", "text": "It's not the cheapest way to start, and it's not the most powerful platform for marketing automation, but for creators who just want courses, community, and email working together, Podia earns its spot on the shortlist.", "gapAfter": 0.6 },
+
+  { "section": "cta", "text": "That's my honest take on Podia." },
+  { "section": "cta", "text": "If this saved you some research, a like genuinely helps, and I'd love to hear your own experience in the comments, I read every single one." },
+  { "section": "cta", "keyword": "subscribe", "text": "Subscribe if you want more honest breakdowns like this one before you buy." }
+]

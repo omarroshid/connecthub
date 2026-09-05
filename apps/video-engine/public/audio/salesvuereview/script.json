@@ -1,0 +1,36 @@
+[
+  { "section": "title", "text": "Salesvue Review. Pros and Cons. Watch before using." },
+  { "section": "intro", "text": "Thinking about Salesvue for your sales team?" },
+  { "section": "intro", "text": "Here's what you need to know before you buy." },
+  { "section": "intro", "text": "Salesvue is a sales engagement and dialer platform built natively inside Salesforce." },
+  { "section": "intro", "text": "That means no separate app, no data syncing, and no extra logins.", "gapAfter": 0.6 },
+
+  { "section": "pros-title", "text": "Let's start with the pros.", "gapAfter": 0.4 },
+  { "section": "pros", "bullet": 1, "label": "100% native to Salesforce", "text": "Pro number one: it lives one hundred percent inside Salesforce." },
+  { "section": "pros", "bullet": 1, "text": "Your cadences, calls, and reports are all standard Salesforce data.", "gapAfter": 0.3 },
+  { "section": "pros", "bullet": 2, "label": "Multi-channel cadences", "text": "Pro number two: built in multi-channel cadences." },
+  { "section": "pros", "bullet": 2, "text": "Automate calls, emails, and tasks in one guided sequence.", "gapAfter": 0.3 },
+  { "section": "pros", "bullet": 3, "label": "Native reporting & dashboards", "text": "Pro number three: native reporting and dashboards." },
+  { "section": "pros", "bullet": 3, "text": "Because the data is native, you can build any report Salesforce allows.", "gapAfter": 0.3 },
+  { "section": "pros", "bullet": 4, "label": "Deep admin customization", "text": "Pro number four: deep admin customization." },
+  { "section": "pros", "bullet": 4, "text": "Your Salesforce admin can extend it with flows and tools they already know.", "gapAfter": 0.6 },
+
+  { "section": "cons-title", "text": "Now, the cons.", "gapAfter": 0.4 },
+  { "section": "cons", "bullet": 1, "label": "Salesforce-only", "text": "Con number one: it only works with Salesforce." },
+  { "section": "cons", "bullet": 1, "text": "If your team isn't on Salesforce, Salesvue isn't an option.", "gapAfter": 0.3 },
+  { "section": "cons", "bullet": 2, "label": "Pricing isn't public", "text": "Con number two: pricing isn't public." },
+  { "section": "cons", "bullet": 2, "text": "You'll need to talk to sales for a quote, which can slow down evaluation.", "gapAfter": 0.3 },
+  { "section": "cons", "bullet": 3, "label": "Interface feels utilitarian", "text": "Con number three: the interface can feel less modern." },
+  { "section": "cons", "bullet": 3, "text": "Compared to standalone tools like Outreach or Salesloft, the UI leans utilitarian.", "gapAfter": 0.3 },
+  { "section": "cons", "bullet": 4, "label": "Real setup & admin time", "text": "Con number four: setup takes real admin time." },
+  { "section": "cons", "bullet": 4, "text": "Getting cadences and dialing configured well isn't a five minute job.", "gapAfter": 0.6 },
+
+  { "section": "verdict", "text": "So, who is Salesvue actually for?" },
+  { "section": "verdict", "text": "If your whole sales org already lives in Salesforce and you want native reporting without a second system, it's a strong fit." },
+  { "section": "verdict", "text": "If you're not on Salesforce, or you want a flashier out of the box tool, look elsewhere.", "gapAfter": 0.6 },
+
+  { "section": "outro", "text": "That's the Salesvue review." },
+  { "section": "outro", "text": "Pros: fully native, strong reporting, deep customization." },
+  { "section": "outro", "text": "Cons: Salesforce only, opaque pricing, and a real setup curve." },
+  { "section": "outro", "text": "Do your own demo before you commit, and thanks for watching." }
+]

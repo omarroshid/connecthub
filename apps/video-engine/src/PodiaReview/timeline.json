@@ -1,0 +1,284 @@
+{
+  "totalDuration": 201.709,
+  "lines": [
+    {
+      "section": "hook",
+      "bullet": null,
+      "label": null,
+      "keyword": "the hype",
+      "text": "You've probably seen creators online swearing Podia is the only tool you'll ever need.",
+      "start": 0.0,
+      "end": 4.861
+    },
+    {
+      "section": "hook",
+      "bullet": null,
+      "label": null,
+      "keyword": "or hype?",
+      "text": "But is that actually true, or is it just another platform riding the all in one hype train?",
+      "start": 5.011,
+      "end": 10.65
+    },
+    {
+      "section": "hook",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "I dug into what Podia actually does today, in 2026, before you hand over your credit card.",
+      "start": 10.8,
+      "end": 17.81
+    },
+    {
+      "section": "intro",
+      "bullet": null,
+      "label": null,
+      "keyword": "one login",
+      "text": "Podia is an all in one platform for creators.",
+      "start": 18.41,
+      "end": 21.361
+    },
+    {
+      "section": "intro",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "Instead of paying for a course host, an email tool, and a website builder separately, Podia folds all of it into a single dashboard.",
+      "start": 21.511,
+      "end": 29.505
+    },
+    {
+      "section": "intro",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "One login, one bill, courses, coaching, memberships, and digital downloads.",
+      "start": 29.655,
+      "end": 35.484
+    },
+    {
+      "section": "how-it-works",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "Here's what actually using it looks like.",
+      "start": 36.084,
+      "end": 38.669
+    },
+    {
+      "section": "how-it-works",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "You start by building your site with Podia's drag and drop editor, no code required, your own fonts, colors, and domain.",
+      "start": 38.819,
+      "end": 46.896
+    },
+    {
+      "section": "how-it-works",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "From there you upload your course, add videos, quizzes, and drip content so lessons unlock over time, and set up certificates for people who finish.",
+      "start": 47.046,
+      "end": 56.664
+    },
+    {
+      "section": "how-it-works",
+      "bullet": null,
+      "label": null,
+      "keyword": "Zoom \u00b7 Meet \u00b7 YouTube",
+      "text": "You can also run live webinars through Zoom, Google Meet, or YouTube Live, or host in person events with their own registration pages.",
+      "start": 56.814,
+      "end": 64.995
+    },
+    {
+      "section": "how-it-works",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "And built into all of that is email marketing, so you can send newsletters and automated sequences without ever leaving Podia.",
+      "start": 65.145,
+      "end": 72.628
+    },
+    {
+      "section": "pros-title",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "Let's start with what Podia gets right.",
+      "start": 73.228,
+      "end": 75.76
+    },
+    {
+      "section": "pros",
+      "bullet": 1,
+      "label": "Real consolidation",
+      "keyword": "consolidation",
+      "text": "The biggest win is real consolidation. If you're paying for a course host, an email tool, and a website builder separately, folding it into one platform can save real money and headaches.",
+      "start": 76.16,
+      "end": 87.394
+    },
+    {
+      "section": "pros",
+      "bullet": 2,
+      "label": "No student caps",
+      "keyword": null,
+      "text": "There's no cap on students, no matter how big your course gets.",
+      "start": 87.544,
+      "end": 91.588
+    },
+    {
+      "section": "pros",
+      "bullet": 3,
+      "label": "Simple website builder",
+      "keyword": null,
+      "text": "The website builder is refreshingly simple, drag and drop, no code.",
+      "start": 91.738,
+      "end": 96.242
+    },
+    {
+      "section": "pros",
+      "bullet": 4,
+      "label": "Free email marketing to 100",
+      "keyword": null,
+      "text": "Email marketing is included free up to a hundred subscribers, even on the entry plan.",
+      "start": 96.392,
+      "end": 101.848
+    },
+    {
+      "section": "cons-title",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "Now, the honest part.",
+      "start": 102.448,
+      "end": 104.294
+    },
+    {
+      "section": "cons",
+      "bullet": 1,
+      "label": "No more free plan",
+      "keyword": "no free plan",
+      "text": "Podia used to have a free plan. That's gone, so you're committing to a paid plan once your trial ends.",
+      "start": 104.694,
+      "end": 111.293
+    },
+    {
+      "section": "cons",
+      "bullet": 2,
+      "label": "5% fee on entry plan",
+      "keyword": "5% fee",
+      "text": "The entry level Mover plan also charges a five percent transaction fee on every sale, which adds up fast at any real volume.",
+      "start": 111.443,
+      "end": 119.356
+    },
+    {
+      "section": "cons",
+      "bullet": 3,
+      "label": "Rigid course builder",
+      "keyword": null,
+      "text": "Course building can feel rigid too. You can't put a video and a quiz in the same lesson, for example.",
+      "start": 119.506,
+      "end": 126.157
+    },
+    {
+      "section": "cons",
+      "bullet": 4,
+      "label": "Thin analytics & support",
+      "keyword": null,
+      "text": "Multiple reviewers point out limited analytics, no easy way to see when a student finishes a course, and support that's slower with no weekend or phone coverage.",
+      "start": 126.307,
+      "end": 135.799
+    },
+    {
+      "section": "who-for",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "So who's this actually for?",
+      "start": 136.399,
+      "end": 138.232
+    },
+    {
+      "section": "who-for",
+      "bullet": 1,
+      "label": "Already juggling 3+ tools",
+      "keyword": null,
+      "text": "If you're already paying for three or four separate tools to run your course business, Podia can genuinely simplify your stack and your bill.",
+      "start": 138.382,
+      "end": 146.384
+    },
+    {
+      "section": "who-for",
+      "bullet": 2,
+      "label": "Want it free, or lowest fees",
+      "keyword": null,
+      "text": "But if you want a truly free way to start, or zero transaction fees on the cheapest plan, look at Thinkific instead.",
+      "start": 146.534,
+      "end": 153.847
+    },
+    {
+      "section": "who-for",
+      "bullet": 3,
+      "label": "Need heavy marketing automation",
+      "keyword": null,
+      "text": "And if you need heavy marketing automation and sales funnels, Kajabi is built more specifically for that.",
+      "start": 153.997,
+      "end": 160.352
+    },
+    {
+      "section": "verdict",
+      "bullet": null,
+      "label": null,
+      "keyword": "worth it?",
+      "text": "So, is Podia worth it?",
+      "start": 160.952,
+      "end": 162.917
+    },
+    {
+      "section": "verdict",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "If you value simplicity over having every advanced feature under the sun, and you're ready to commit to a paid plan, it's a genuinely solid all in one option.",
+      "start": 163.067,
+      "end": 172.179
+    },
+    {
+      "section": "verdict",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "It's not the cheapest way to start, and it's not the most powerful platform for marketing automation, but for creators who just want courses, community, and email working together, Podia earns its spot on the shortlist.",
+      "start": 172.329,
+      "end": 185.816
+    },
+    {
+      "section": "cta",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "That's my honest take on Podia.",
+      "start": 186.416,
+      "end": 188.514
+    },
+    {
+      "section": "cta",
+      "bullet": null,
+      "label": null,
+      "keyword": null,
+      "text": "If this saved you some research, a like genuinely helps, and I'd love to hear your own experience in the comments, I read every single one.",
+      "start": 188.664,
+      "end": 196.986
+    },
+    {
+      "section": "cta",
+      "bullet": null,
+      "label": null,
+      "keyword": "subscribe",
+      "text": "Subscribe if you want more honest breakdowns like this one before you buy.",
+      "start": 197.136,
+      "end": 201.559
+    }
+  ]
+}
