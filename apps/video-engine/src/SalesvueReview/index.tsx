@@ -27,7 +27,7 @@ const Block: React.FC<{ name: string; children: React.ReactNode }> = ({
 export const SalesvueReview: React.FC = () => {
   return (
     <AbsoluteFill style={{ background: theme.bg }}>
-      <Audio src={staticFile("audio/narration.mp3")} />
+      <Audio src={staticFile("audio/salesvuereview/narration.mp3")} />
 
       <Block name="title">
         <TitleCard />

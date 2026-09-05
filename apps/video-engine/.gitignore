@@ -8,5 +8,5 @@ out
 
 # Narration build intermediates (per-line synth + uncompressed wav) —
 # only the final narration.mp3 + timeline.json are kept.
-public/audio/lines
-public/audio/narration.wav
+public/audio/*/lines
+public/audio/*/narration.wav

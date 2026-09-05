@@ -1,30 +1,39 @@
-"""Generate narration audio + a caption timeline from public/audio/script.json.
+"""Generate narration audio + a caption timeline from a script.json file.
 
 Synthesizes each line separately with eSpeak NG so its exact duration is known
 (no network / ML model needed), then concatenates the lines (with silence gaps)
 into one narration track and writes a timeline.json Remotion reads to time
 captions and section changes precisely to the audio.
+
+Voice defaults to the standard calibrated profile in
+docs/video-production/VOICE_PROFILE.md (matched to the user-provided
+reference voiceover). Override with --voice/--pitch for a different video.
+
+Usage (from apps/video-engine):
+    python3 scripts/build-narration.py --composition SalesvueReview
+    python3 scripts/build-narration.py --composition WordtuneReview --speed 160
 """
 
+import argparse
 import json
 import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-AUDIO_DIR = ROOT / "public" / "audio"
-LINES_DIR = AUDIO_DIR / "lines"
-TIMELINE_OUT = ROOT / "src" / "SalesvueReview" / "timeline.json"
-VOICE = "en-us+grandpa"
-SPEED_WPM = 172
-PITCH = 25  # 0-99, default 50; lower = deeper
+
+# Standard brand voice — see docs/video-production/VOICE_PROFILE.md
+DEFAULT_VOICE = "en-us"
+DEFAULT_PITCH = 62  # espeak -p (0-99, default 50); calibrated to ~114Hz median F0
+DEFAULT_SPEED_WPM = 165
+DEFAULT_AMPLITUDE = 170
 SAMPLE_RATE = 22050
 
 
-def synth_line(text: str, out_path: Path) -> None:
+def synth_line(text: str, out_path: Path, voice: str, speed: int, pitch: int, amplitude: int) -> None:
     subprocess.run(
         [
-            "espeak-ng", "-v", VOICE, "-s", str(SPEED_WPM), "-p", str(PITCH),
-            "-a", "170", "-w", str(out_path), text,
+            "espeak-ng", "-v", voice, "-s", str(speed), "-p", str(pitch),
+            "-a", str(amplitude), "-w", str(out_path), text,
         ],
         check=True,
         capture_output=True,
@@ -53,16 +62,31 @@ def get_duration(path: Path) -> float:
 
 
 def main() -> None:
-    LINES_DIR.mkdir(parents=True, exist_ok=True)
-    script = json.loads((AUDIO_DIR / "script.json").read_text())
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--composition", required=True, help="Composition folder name under src/, e.g. SalesvueReview")
+    parser.add_argument("--script", default=None, help="Path to script.json (default: public/audio/<composition-lower>/script.json)")
+    parser.add_argument("--voice", default=DEFAULT_VOICE, help=f"espeak-ng voice (default: {DEFAULT_VOICE})")
+    parser.add_argument("--pitch", type=int, default=DEFAULT_PITCH, help=f"espeak-ng pitch 0-99 (default: {DEFAULT_PITCH})")
+    parser.add_argument("--speed", type=int, default=DEFAULT_SPEED_WPM, help=f"espeak-ng words/min, tune to hit target runtime (default: {DEFAULT_SPEED_WPM})")
+    parser.add_argument("--amplitude", type=int, default=DEFAULT_AMPLITUDE, help=f"espeak-ng amplitude 0-200 (default: {DEFAULT_AMPLITUDE})")
+    args = parser.parse_args()
+
+    slug = args.composition.lower()
+    audio_dir = ROOT / "public" / "audio" / slug
+    lines_dir = audio_dir / "lines"
+    script_path = Path(args.script) if args.script else audio_dir / "script.json"
+    timeline_out = ROOT / "src" / args.composition / "timeline.json"
+
+    lines_dir.mkdir(parents=True, exist_ok=True)
+    script = json.loads(script_path.read_text())
 
     concat_parts = []
     timeline = []
     cursor = 0.0
 
     for i, line in enumerate(script):
-        speech_path = LINES_DIR / f"line-{i:02d}.wav"
-        synth_line(line["text"], speech_path)
+        speech_path = lines_dir / f"line-{i:02d}.wav"
+        synth_line(line["text"], speech_path, args.voice, args.speed, args.pitch, args.amplitude)
         dur = get_duration(speech_path)
 
         timeline.append({
@@ -78,36 +102,36 @@ def main() -> None:
 
         gap = line.get("gapAfter", 0.15)
         if gap > 0:
-            gap_path = LINES_DIR / f"gap-{i:02d}.wav"
+            gap_path = lines_dir / f"gap-{i:02d}.wav"
             make_silence(gap, gap_path)
             concat_parts.append(gap_path)
             cursor += gap
 
-    list_file = LINES_DIR / "concat_list.txt"
+    list_file = lines_dir / "concat_list.txt"
     list_file.write_text("\n".join(f"file '{p.resolve()}'" for p in concat_parts))
 
-    narration_wav = AUDIO_DIR / "narration.wav"
+    narration_wav = audio_dir / "narration.wav"
     subprocess.run(
         ["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(list_file),
          "-c", "copy", str(narration_wav)],
         check=True, capture_output=True,
     )
 
-    narration_mp3 = AUDIO_DIR / "narration.mp3"
+    narration_mp3 = audio_dir / "narration.mp3"
     subprocess.run(
         ["ffmpeg", "-y", "-i", str(narration_wav), "-codec:a", "libmp3lame",
          "-qscale:a", "2", str(narration_mp3)],
         check=True, capture_output=True,
     )
 
-    TIMELINE_OUT.parent.mkdir(parents=True, exist_ok=True)
-    TIMELINE_OUT.write_text(json.dumps({
+    timeline_out.parent.mkdir(parents=True, exist_ok=True)
+    timeline_out.write_text(json.dumps({
         "totalDuration": round(cursor, 3),
         "lines": timeline,
     }, indent=2))
 
     print(f"Total narration duration: {cursor:.2f}s")
-    print(f"Wrote {narration_mp3} and {TIMELINE_OUT}")
+    print(f"Wrote {narration_mp3} and {timeline_out}")
 
 
 if __name__ == "__main__":
