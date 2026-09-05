@@ -4,9 +4,12 @@ import { HelloWorld } from "./HelloWorld";
 import { Logo } from "./HelloWorld/Logo";
 import { SalesvueReview } from "./SalesvueReview";
 import { totalDuration as salesvueTotalDuration } from "./SalesvueReview/timeline";
+import { PodiaReview } from "./PodiaReview";
+import podiaTimelineData from "./PodiaReview/timeline.json";
 
 const FPS = 30;
 const SALESVUE_DURATION_IN_FRAMES = Math.ceil(salesvueTotalDuration * FPS) + 15;
+const PODIA_DURATION_IN_FRAMES = Math.ceil(podiaTimelineData.totalDuration * FPS) + 15;
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -36,6 +39,15 @@ export const RemotionRoot: React.FC = () => {
         id="SalesvueReview"
         component={SalesvueReview}
         durationInFrames={SALESVUE_DURATION_IN_FRAMES}
+        fps={FPS}
+        width={1920}
+        height={1080}
+      />
+
+      <Composition
+        id="PodiaReview"
+        component={PodiaReview}
+        durationInFrames={PODIA_DURATION_IN_FRAMES}
         fps={FPS}
         width={1920}
         height={1080}

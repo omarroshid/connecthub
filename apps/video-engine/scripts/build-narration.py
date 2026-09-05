@@ -93,6 +93,7 @@ def main() -> None:
             "section": line["section"],
             "bullet": line.get("bullet"),
             "label": line.get("label"),
+            "keyword": line.get("keyword"),
             "text": line["text"],
             "start": round(cursor, 3),
             "end": round(cursor + dur, 3),

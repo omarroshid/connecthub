@@ -1,8 +1,15 @@
 import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
-import { lines } from "./timeline";
-import { theme } from "./theme";
+import type { TimelineHelpers } from "./timeline";
+import type { Theme } from "./theme";
 
-export const Captions: React.FC = () => {
+// Full-sentence caption bar anchored at the bottom, showing whatever line is
+// currently being spoken. Used for the calmer explanation sections; the
+// hook/CTA use HookLine's bigger kinetic text instead.
+export const Captions: React.FC<{ timeline: TimelineHelpers; theme: Theme; hideForSections?: string[] }> = ({
+  timeline,
+  theme,
+  hideForSections = [],
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
@@ -10,12 +17,14 @@ export const Captions: React.FC = () => {
   // Extend each line's active window to the next line's start so the bar
   // holds - rather than blinking to blank - through the brief silence gap
   // between spoken lines; only the very last line in the video fades out.
+  const lines = timeline.lines;
   const index = lines.findIndex((l, i) => {
     const windowEnd = i + 1 < lines.length ? lines[i + 1].start : l.end;
     return t >= l.start && t < windowEnd;
   });
   if (index === -1) return null;
   const active = lines[index];
+  if (hideForSections.includes(active.section)) return null;
   const isLast = index === lines.length - 1;
 
   const localT = t - active.start;
