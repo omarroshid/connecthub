@@ -5,15 +5,34 @@ This is the standard voiceover profile for every product review video
 `reference-voice/reference-voiceover.mp3` — a real voiceover sample the user
 provided as the target sound.
 
-## Why it's approximated, not cloned
+## Why it's approximated, not cloned (in this sandbox)
 
-There's no real neural TTS or voice-cloning model available in this sandbox
-(no network access to ElevenLabs/HuggingFace/etc.). Narration is synthesized
-locally with **eSpeak NG**, a formant synthesizer — it can match pitch and
-pacing, but it cannot reproduce a specific human's timbre, so it's an
-approximation, not a clone. If real voice cloning becomes available (e.g. on
-a machine with internet access), feed it `reference-voiceover.mp3` directly
-as the reference/target voice instead of using the eSpeak parameters below.
+There's no real neural TTS or voice-cloning model reachable from this
+sandbox (network egress blocks `api.fish.audio`, `huggingface.co`, and most
+hosts outside a small package-registry allowlist — confirmed by direct
+`curl` and by the script itself failing with "Tunnel connection failed: 403
+Forbidden"). Narration falls back to **eSpeak NG**, a formant synthesizer —
+it can match pitch and pacing, but it cannot reproduce a specific human's
+timbre, so it's an approximation, not a clone.
+
+**A real cloned-voice option now exists in the script** — the user has a
+Fish Audio (fish.audio) account with a trained voice model. `build-narration.py
+--voice-backend fish --fish-voice-id <id>` calls Fish Audio's TTS API with
+that voice instead of eSpeak, producing an actual clone rather than an
+approximation. It's wired up and its error handling is verified (a deliberate
+bad connection raises a clean, readable error) but the **happy path is
+unverified from this sandbox** — run it from a machine that can reach
+`api.fish.audio` to actually hear the output.
+
+**Never put the API key in a file, script argument default, or commit.** Set
+it as an environment variable only:
+```
+export FISH_AUDIO_API_KEY="sk-fish-..."
+export FISH_AUDIO_VOICE_ID="<voice model id>"
+python3 scripts/build-narration.py --composition PodiaReview --voice-backend fish
+```
+The script reads both from the environment by default (see `--fish-api-key`
+/ `--fish-voice-id` in its `--help`); it never writes the key anywhere.
 
 ## Reference sample analysis
 
