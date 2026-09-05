@@ -34,7 +34,6 @@ export const PodiaReview: React.FC = () => {
 
       <Block name="hook">
         <SectionBackground kind="energetic" theme={theme} />
-        <KineticLine timeline={timeline} theme={theme} sectionName="hook" fontSize={62} />
       </Block>
 
       <Block name="intro">
@@ -103,9 +102,16 @@ export const PodiaReview: React.FC = () => {
 
       <Block name="cta">
         <SectionBackground kind="energetic" theme={theme} />
-        <KineticLine timeline={timeline} theme={theme} sectionName="cta" fontSize={56} />
       </Block>
 
+      {/* Rendered at root (not inside a Sequence/Block) because they compare
+          against timeline.json's absolute times via useCurrentFrame() - a
+          Sequence would reset that to a local, from-relative frame count and
+          break the section-time comparison (a real bug caught during review:
+          it silently broke every KineticLine section except the first one,
+          which starts at frame 0 so the bug was invisible there). */}
+      <KineticLine timeline={timeline} theme={theme} sectionName="hook" fontSize={62} />
+      <KineticLine timeline={timeline} theme={theme} sectionName="cta" fontSize={56} />
       <KeywordPop timeline={timeline} theme={theme} />
       <Captions timeline={timeline} theme={theme} hideForSections={["hook", "cta"]} />
     </AbsoluteFill>
